@@ -1,8 +1,5 @@
 const mongoose = require('./connection.js')
 
-global.sampleModel = [];
-
-
 const CreatureModelSchema = new mongoose.Schema({
   name: String,
   description: String
@@ -13,7 +10,7 @@ const CreatureCollection = mongoose.model('Creature', CreatureModelSchema)
 
 
 const getAllCreatures = () => {
-  return CreatureCollection.find({})
+  return CreatureCollection.find()
 }
 
 const getCreature = (creatureId) => {

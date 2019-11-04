@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import HelloWorld from './components/HelloWorld.js'
-import './App.css';
+import Creatures from './components/Creatures'
+import SingleCreature from './components/SingleCreature'
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+  render () {
+    return (
       <Router>
-        <Switch>
-          <Route exact path="/" component={HelloWorld}/>
-        </Switch>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Creatures}/>
+            <Route path="/:id" component={SingleCreature}/>
+          </Switch>
+        </div>
       </Router>
-    </div>
-  );
+    )
+  }
 }
 
-export default App;
+export default App
