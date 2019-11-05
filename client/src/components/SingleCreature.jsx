@@ -34,7 +34,7 @@ export default class SingleCreature extends React.Component {
             description: this.state.updatedCreatureDescription
         }
         this.setState({creature: updatedCreature})
-        axios.put(`/creatures/${this.state.creature._id}`, this.state.creature)
+        axios.put(`/creatures/${this.state.creature._id}`, updatedCreature)
         this.toggleEdit()
     }
     removeCreature = () => {
