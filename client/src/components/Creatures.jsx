@@ -37,6 +37,7 @@ export default class Creatures extends Component {
     }
     
     addNewCreature = () => {
+        this.toggleForm()
         axios.post('/creatures', this.state.newCreature)
         .then(() => {
             this.componentDidMount()
